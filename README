@@ -1,0 +1,63 @@
+
+I've been trawling through some of our code repositories
+and I've found a bunch of code fragments for checking
+credentials, quoting data, and other security-related 
+data processing.
+
+I suspect that these all have more or less serious 
+security weaknesses in them: the authentication checks 
+can be bypassed; code might be prone to crashing; or users 
+could access data that they should not be able to.
+
+But I don't have time to investigate fully, and no-one
+will believe me unless I can demonstrate the flaws.
+
+Your challenge is to examime these 6 C code fragments
+and demonstrate, for each fragment, a way in which it
+can be broken. The only files that you need to edit are
+the 'question_*.c' files.
+
+This directory contains the following files:
+
+* README - this file
+
+* PASSWORD - contains the password to access the quiz
+
+* question_1.c thru question_6.c are the challenges
+  each contains the fragment of code to be explored
+  and a test routine which 
+  i/ describes what needs to be demonstrated; and
+  ii/ indicates where you should write your code
+
+* run.sh - a short script to run all of the programs
+  and extract your code into an 'output' file
+
+* Makefile - a simple makefile to build and run
+  the tests
+
+* aes.c/aes.h - an open-source AES implemention
+  you do not need to worry about the contents of these
+  files -- we are not interested in any potential
+  vulnerabilities in this code
+
+To build the code, run
+
+	$ make
+
+if that builds cleanly, run
+
+	$ make test
+
+which will produce 'output'; alternatively you can do:
+
+	$ ./run.sh
+
+all files (*including output*) can be cleaned up by
+
+	$ make clean
+
+When you've completed the challenge, paste the contents
+of the 'output' file into the quiz submission.
+
+Good luck!
+
